@@ -1,15 +1,11 @@
-*{
-   /* font-family: Norse-Bold, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-
-}
-/* @font-face {
+/* @import url("./Norse-Bold.otf"); */
+@font-face {
    font-family: "Norse-Bold";
    src: url("./Norse-Bold.otf");
-} */
-@import url("./Norse-Bold.otf");
-/* html{
-   height: 100%;
-} */
+}
+*{
+   /* font-family: Norse-Bold, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
 
 body{
    display: flex;
@@ -19,9 +15,9 @@ body{
    min-height: 100vh;
    margin: 0;
    padding: 0;
-   /* background-color: black; */
-   
+   background-color: black;
 }
+
 .container{
    display: flex;
    flex-direction: row;
@@ -33,11 +29,13 @@ body{
    margin: 0;
    padding: 0;
 }
+
 .h-text{
    margin-left: 30px;
    margin-bottom: 30px;
    font-weight: bold;
 }
+
 .img-section{
    display: flex;
    justify-content: start;
@@ -46,55 +44,53 @@ body{
    margin: 0px;
    width: 280px;
    height: 100vh;
-
-   /* width: 300px; */
-   /* height: 400px; */
-   /* background-image:url("./images/lexi-laginess-amTPFVMfIt0-unsplash.jpg"); */
 }
+
 .img img{
-   height: 100vh;
-   
+   height: 100vh;  
 }
 img{
-   /* position: relative; */
    z-index: -1;
 }
+.img p{
+   position: absolute;
+   bottom: 0.5rem ;
+   color: white;
+   text-align: center;
+   font-size: 10px;
+   margin-left: 50px;
+}
+
+.img p a{
+   color: white;
+}
+
 .logo{
    display: flex;
    flex-direction: row;
    justify-content: center;
    align-items: center;
    background-color:rgba(0, 0, 0, 0.4);
-   /* background: transparent(20 5 10 2); */
-   /* opacity: 0.4; */
    position: absolute;
    top: 7rem;
    width: 280px;
    height: 80px;
    z-index: 1;
-
 }
+
 .logo p{
-   font-size: 40px;
+   font-size: 60px;
    color: white;
    font-weight: bold;
-
+   font-family: Norse-Bold, sans-serif;
 }
-/* .main-content{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   /* background-color: azure; 
-   
-}*/
+
 .user-input{
    background-color: white;
    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.4);
    width: 600px;
    margin: 0px;
-   padding: 1px 5px 20px 30px;
-   
+   padding: 1px 5px 20px 30px; 
 }
 
 .input div{
@@ -104,22 +100,14 @@ img{
    padding-right: 40px;
    padding-top: 10px;
    width: 200px;
-
 }
-input{
-   border: 0;
-   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+input{ 
+   border: 2px solid #E5E7EB;
+   /* box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3); */
    height: 22px;
    border-radius: 5px;
 }
-label{
-   /* display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
-   text-align: start; */
-   /* margin: 5px; */
-}
+
 .submit-button{
    margin: 30px; 
 }
@@ -133,30 +121,38 @@ button{
    box-shadow: 0px 1px 1px #222121;
    color: white;
    font-weight: bold;
+   cursor: pointer;
 }
-.help{
-   display: none;
-   
+.error{
+   display:none;
+   color: red;
+   margin: 0; 
 }
-/* input:valid{
+.error:invalid{
+   display: block;
+   color: red;
+}
+input:valid{
    border-color: green;
-} */
-input:invalid{
-   border: 2px;
-   border-color: red;
 }
-input:focus{
-   /* border: 2px solid blue;
-   border-color: #0000ff; */
+/* input:invalid{
+   border-color: red;
+} */
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="tel"]:focus {
+   border: 1px solid blue;
    outline: none !important;
    box-shadow: 0 0 4px  #0000ff;
 }
+input[type="text"]:invalid, 
+input[type="email"]:invalid, 
+input[type="tel"]:invalid {
+   border: 1px solid red;
 
-.help:invalid{
-   display: block;
-   color: red;
 }
-.invalid .help{
-   display: block;
-   color: red;
+
+input[type="password"]:focus{
+   border-color: red;
+   outline: none !important;
 }
